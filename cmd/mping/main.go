@@ -24,10 +24,10 @@ func Execute() {
 		command.NewConfigCmd(),
 	)
 	cmd.CompletionOptions.HiddenDefaultCmd = true
-	cmd.SetOutput(os.Stdout)
+	cmd.SetOut(os.Stdout)
 
 	if err := cmd.Execute(); err != nil {
-		cmd.SetOutput(os.Stderr)
+		cmd.SetOut(os.Stderr)
 		cmd.Println(err)
 		os.Exit(1)
 	}
